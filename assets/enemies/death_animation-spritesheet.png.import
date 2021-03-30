@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/death_animation-spritesheet.png-7232bc1cce8e0ef8e77a28d1c6cc7044.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://assets/enemies/death_animation-spritesheet.png"
+dest_files=[ "res://.import/death_animation-spritesheet.png-7232bc1cce8e0ef8e77a28d1c6cc7044.stex" ]
 
 [params]
 

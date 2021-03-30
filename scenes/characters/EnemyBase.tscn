@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/characters/EnemyBase.gd" type="Script" id=1]
+[ext_resource path="res://assets/enemies/death_animation-spritesheet.png" type="Texture" id=2]
+
+[node name="EnemyBase" type="KinematicBody2D"]
+collision_layer = 256
+collision_mask = 65
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="DeathSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="EnemyHead" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHead"]
+one_way_collision = true
+
+[node name="EnemyHit" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHit"]
+
+[node name="EnemyHurt" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHurt"]
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="EnemyHead" to="." method="_on_EnemyHead_area_entered"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]

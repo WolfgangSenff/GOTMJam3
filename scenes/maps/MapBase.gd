@@ -28,6 +28,7 @@ func _ready() -> void:
     aunt.set_physics_process(true)
 
 func connect_to_exit(exit) -> void:
+    exit.connect("about_to_open", self, "_on_exit_opened")
     exit.connect("opened", self, "_on_exit_opened")
     exit.connect("closed", self, "_on_exit_closed")
 

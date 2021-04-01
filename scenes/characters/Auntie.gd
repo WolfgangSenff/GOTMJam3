@@ -14,7 +14,7 @@ export (float) var MaxSpeed = 150
 var _jump_count = 0
 var _snap_vector = 1 setget , get_snap_vector
 var _velocity = Vector2.ZERO
-var _is_in_enemy_head := false setget set__is_in_enemy_head
+var _is_in_enemy_head := false setget set_is_in_enemy_head
 var _current_enemy_jump = null
 var _can_jump
 
@@ -55,7 +55,7 @@ func get_is_in_air() -> bool:
 func get_snap_vector() -> int:
     return 1 if not _is_in_air else 0
     
-func set__is_in_enemy_head(value) -> void:
+func set_is_in_enemy_head(value) -> void:
     _is_in_enemy_head = value
     
 func set_condition(cond : String, value : bool) -> void:
@@ -71,18 +71,7 @@ func _physics_process(delta: float) -> void:
     var sign_x = sign(x_input)
     var sign_y = sign(_velocity.y)
     var x_is_zero = is_zero_approx(x_input)
-#    if has_pressed_jump or not on_floor:
-#        self._is_in_air = true
-#        if on_floor:
-#            _jump_count = 1
-#            _velocity.y -= JumpStrength
-#        elif has_pressed_jump and _is_in_enemy_head and sign_y > 0:
-#            if _jump_count < 2:
-#                _velocity.y -= (JumpStrength * JumpMultiplier)
-#                _jump_count += 1
-#        elif _is_in_enemy_head and sign_y > 0 and not has_pressed_jump:
-#            _velocity.y -= (JumpStrength * JumpMultiplier * .8)
-#
+    
     if has_pressed_jump and on_floor:
         _velocity.y = -JumpStrength
         on_floor = false

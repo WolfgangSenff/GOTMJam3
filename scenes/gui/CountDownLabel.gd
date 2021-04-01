@@ -9,7 +9,7 @@ var _current_time
 onready var timer = $Timer
 
 func _ready() -> void:
-    _current_time = InitialTime if InitialTime != 0 else Globals.current_time        
+    _current_time = InitialTime if not Globals.current_time else Globals.current_time        
     text = str(_current_time)
 
 func start_timer() -> void:

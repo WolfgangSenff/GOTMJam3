@@ -17,12 +17,15 @@ func _on_EnemyHead_area_entered(area: Area2D) -> void:
         HP -= 1
         _can_take_damage = false
         _damage_timer.start()
-        if HP <= 0:
-            set_physics_process(false)
-            _animation_player.play("Death")
-            _animation_tree.active = false
-            yield(_animation_player, "animation_finished")
-            queue_free()
+        _check_death()
+        
+func _check_death() -> void:
+    if HP <= 0:
+        set_physics_process(false)
+        _animation_player.play("Death")
+        _animation_tree.active = false
+        yield(_animation_player, "animation_finished")
+        queue_free()
 
 func _on_DamageTimer_timeout() -> void:
     _can_take_damage = true

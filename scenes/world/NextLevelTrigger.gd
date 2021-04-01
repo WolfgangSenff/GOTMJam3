@@ -1,5 +1,6 @@
 extends Area2D
 
+signal about_to_open
 signal opened
 signal closed
 
@@ -13,6 +14,7 @@ func _on_NextLevelTrigger_area_entered(area: Area2D) -> void:
     if player_can_transfer:
         Globals.level_transfer_resource = NextLevelResource
         Globals.is_level_transfer = true
+        emit_signal("about_to_open")
         anim.play("Open")
         yield(anim, "animation_finished")
         emit_signal("opened")

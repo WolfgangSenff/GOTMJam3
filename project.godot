@@ -165,7 +165,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GOTM3"
-run/main_scene="res://scenes/maps/Level1.tscn"
+run/main_scene="res://scenes/gui/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -175,10 +175,11 @@ Globals="*res://Globals.gd"
 
 [display]
 
-window/size/width=240
+window/size/width=360
 window/size/height=202
-window/size/test_width=960
-window/size/test_height=808
+window/size/test_width=1080
+window/size/test_height=606
+window/per_pixel_transparency/allowed=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -265,5 +266,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0.333333, 0.796078, 1, 1 )
 environment/default_environment="res://default_env.tres"

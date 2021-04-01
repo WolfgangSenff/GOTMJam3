@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/auntie-spritesheet.png-305b2d6b499960319650f5abac2ab9f2.stex"
+path="res://.import/birb-spritesheet.png-bdefb5bbd72b52f9d85b801f9254dd5b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/tilesets/auntie-spritesheet.png"
-dest_files=[ "res://.import/auntie-spritesheet.png-305b2d6b499960319650f5abac2ab9f2.stex" ]
+source_file="res://assets/enemies/birb-spritesheet.png"
+dest_files=[ "res://.import/birb-spritesheet.png-bdefb5bbd72b52f9d85b801f9254dd5b.stex" ]
 
 [params]
 

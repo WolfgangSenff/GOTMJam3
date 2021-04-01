@@ -1,0 +1,199 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/characters/EnemyBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/enemies/angry_rock-spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://scenes/characters/AngryRock.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 14 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Damage"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 540.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DeathSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Smash"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14, 10 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 15, 10 )
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 106, 10 )
+
+[node name="AngryRock" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 5, -14 )
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, -16 )
+texture = ExtResource( 2 )
+hframes = 4
+vframes = 3
+frame = 8
+
+[node name="WalkingCast" type="RayCast2D" parent="Sprite" index="0"]
+enabled = true
+cast_to = Vector2( -16, 0 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "Idle"
+playback_process_mode = 0
+anims/Damage = SubResource( 2 )
+anims/Death = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Smash = SubResource( 5 )
+anims/Wakeup = SubResource( 6 )
+anims/Walk = SubResource( 7 )
+
+[node name="CollisionShape2D" parent="EnemyHead" index="0"]
+position = Vector2( 3, -21 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D" parent="EnemyHit" index="0"]
+position = Vector2( 3, -21 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D" parent="EnemyHurt" index="0"]
+position = Vector2( 3, -14 )
+shape = SubResource( 10 )
+
+[node name="LeftCliffCheck" type="RayCast2D" parent="." index="9"]
+position = Vector2( -8, 0 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="RightCliffCheck" type="RayCast2D" parent="." index="10"]
+position = Vector2( 12, 0 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="WakenArea" type="Area2D" parent="." index="11"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WakenArea" index="0"]
+position = Vector2( 3, -10 )
+shape = SubResource( 11 )
+
+[connection signal="area_entered" from="EnemyHead" to="." method="_on_EnemyHead_anim_area_entered"]

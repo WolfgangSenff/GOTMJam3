@@ -174,17 +174,19 @@ extents = Vector2( 6, 6 )
 
 [node name="SheepingRock" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+ShouldMove = false
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
+visible = false
 position = Vector2( 0, -3 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 15
+frame = 12
 
 [node name="WalkingCast" type="RayCast2D" parent="Sprite" index="0"]
 position = Vector2( 0, -4.76837e-07 )
@@ -192,7 +194,7 @@ enabled = true
 cast_to = Vector2( -8, 0 )
 
 [node name="DeathSprite" parent="." index="2"]
-frame = 2
+visible = true
 
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = "Idle"
@@ -237,4 +239,3 @@ position = Vector2( 0, -6 )
 shape = SubResource( 10 )
 
 [connection signal="area_entered" from="EnemyHead" to="." method="_on_EnemyHead_anim_area_entered"]
-[connection signal="body_entered" from="WakenArea" to="." method="_on_WakenArea_body_entered"]

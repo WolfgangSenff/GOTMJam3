@@ -8,6 +8,11 @@ export (float) var WalkingSpeed = 60
 export (bool) var ShouldMove = true
 
 var _is_awake = false
+
+func _ready() -> void:
+    _animation_player.play("Wakeup")
+    yield(_animation_player, "animation_finished")
+    _is_awake = true
     
 func _physics_process(delta: float) -> void:
     if _is_awake:
@@ -27,9 +32,3 @@ func _physics_process(delta: float) -> void:
 func _on_EnemyHead_anim_area_entered(area: Area2D) -> void:
     if HP > 0 and area.get_parent()._velocity.y > 0:
         _animation_player.play("Damage")
-
-func _on_WakenArea_body_entered(body: Node) -> void:
-    if not _is_awake:
-        _animation_player.play("Wakeup")
-        yield(_animation_player, "animation_finished")
-        _is_awake = true

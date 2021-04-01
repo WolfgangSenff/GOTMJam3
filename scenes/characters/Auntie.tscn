@@ -1,11 +1,11 @@
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/characters/CharacterBase.tscn" type="PackedScene" id=1]
-[ext_resource path="res://environment/tilesets/auntie-spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/ants/auntie_real-spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://scenes/characters/Auntie.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 6 )
+extents = Vector2( 18, 10 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle1"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle2"
-length = 2.0
+length = 0.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -35,10 +35,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 1.6, 1.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 9, 10, 11, 10, 9 ]
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -54,11 +54,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 12 ]
+"values": [ 8 ]
 }
 
 [sub_resource type="Animation" id=5]
-length = 0.7
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -67,10 +67,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 4, 5, 6, 7, 8, 9 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=6]
@@ -107,30 +107,30 @@ advance_condition = "is_in_air"
 [sub_resource type="AnimationNodeStateMachineTransition" id=15]
 advance_condition = "is_in_air"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 advance_condition = "is_walking"
 
-[sub_resource type="AnimationNodeStateMachine" id=16]
+[sub_resource type="AnimationNodeStateMachine" id=17]
 states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 322, 46.5 )
 states/InAir/node = SubResource( 9 )
 states/InAir/position = Vector2( 437.5, 194 )
 states/Walk/node = SubResource( 10 )
 states/Walk/position = Vector2( 149.5, 177.75 )
-transitions = [ "Idle", "Walk", SubResource( 11 ), "Walk", "Idle", SubResource( 12 ), "InAir", "Idle", SubResource( 13 ), "Walk", "InAir", SubResource( 14 ), "Idle", "InAir", SubResource( 15 ), "InAir", "Walk", SubResource( 21 ) ]
+transitions = [ "Idle", "Walk", SubResource( 11 ), "Walk", "Idle", SubResource( 12 ), "InAir", "Idle", SubResource( 13 ), "Walk", "InAir", SubResource( 14 ), "Idle", "InAir", SubResource( 15 ), "InAir", "Walk", SubResource( 16 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -96, 6 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
-
-[sub_resource type="CapsuleShape2D" id=18]
-radius = 2.0
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
 [sub_resource type="CapsuleShape2D" id=19]
+radius = 2.0
+
+[sub_resource type="CapsuleShape2D" id=20]
 radius = 4.0
 height = 16.0
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 14, 6 )
 
 [node name="Auntie" instance=ExtResource( 1 )]
@@ -139,15 +139,15 @@ collision_mask = 257
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( -1, -5 )
+position = Vector2( -1, -10 )
 shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
-position = Vector2( 0, -5 )
+position = Vector2( 0, -11 )
 texture = ExtResource( 2 )
-hframes = 5
+hframes = 3
 vframes = 3
-frame = 11
+frame = 2
 
 [node name="AnimationPlayer" parent="." index="2"]
 anims/Idle1 = SubResource( 2 )
@@ -156,9 +156,9 @@ anims/InAir = SubResource( 4 )
 anims/Walk = SubResource( 5 )
 
 [node name="AnimationTree" parent="." index="3"]
-tree_root = SubResource( 16 )
+tree_root = SubResource( 17 )
 active = true
-parameters/playback = SubResource( 17 )
+parameters/playback = SubResource( 18 )
 parameters/conditions/is_idle = true
 parameters/conditions/is_in_air = false
 parameters/conditions/is_walking = false
@@ -171,7 +171,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Feet" index="0"]
 position = Vector2( -2, -1 )
 rotation = 1.5708
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="Hit" type="Area2D" parent="." index="6"]
 collision_layer = 4
@@ -180,7 +180,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit" index="0"]
 position = Vector2( -1, -4 )
 rotation = 1.5708
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Trigger" type="Area2D" parent="." index="7"]
 collision_layer = 0
@@ -188,7 +188,7 @@ collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" index="0"]
 position = Vector2( 0, -5 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [connection signal="area_entered" from="Feet" to="." method="_on_Feet_area_entered"]
 [connection signal="area_exited" from="Feet" to="." method="_on_Feet_area_exited"]

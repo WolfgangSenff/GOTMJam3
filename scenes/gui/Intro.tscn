@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/gui/Intro.gd" type="Script" id=1]
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 142.0
+margin_top = 45.0
+margin_right = 235.0
+margin_bottom = 65.0
+text = "Single Player"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 131.0
+margin_top = 88.0
+margin_right = 251.0
+margin_bottom = 108.0
+text = "Play with Friends"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

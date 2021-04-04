@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
         if _walking_cast.is_colliding() || !_left_cliff_cast.is_colliding() || !_right_cliff_cast.is_colliding():
             _sprite.scale.x = -_sprite.scale.x
         
-        var movement = Vector2.DOWN * 120 * delta # gravity ?
+        var movement = Vector2.DOWN * 120 # gravity ?
         
         if ShouldMove:
             movement += WalkingSpeed * -_sprite.scale.x * Vector2.RIGHT

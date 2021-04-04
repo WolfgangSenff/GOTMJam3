@@ -14,3 +14,8 @@ func on_new_player_joined(player_data) -> void:
     var label = Label.new()
     label.text = player_data["data"]["Name"]
     grid.add_child(label)    
+    Globals.add_player(label.text)
+
+
+func _on_Button_pressed() -> void:
+    Globals.start_game()

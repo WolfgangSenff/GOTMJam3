@@ -22,4 +22,3 @@ z_index = -1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_NextLevelTrigger_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_NextLevelTrigger_area_exited"]

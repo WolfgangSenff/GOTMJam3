@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/characters/SheepingRock.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 6 )
+extents = Vector2( 5, 5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Damage"
@@ -167,34 +167,29 @@ extents = Vector2( 7, 7 )
 extents = Vector2( 6, 6 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 100, 10 )
+extents = Vector2( 1, 1 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 6 )
 
 [node name="SheepingRock" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-ShouldMove = false
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( 0, -5 )
+position = Vector2( 0, -4 )
 shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
-visible = false
 position = Vector2( 0, -3 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
-frame = 12
 
 [node name="WalkingCast" type="RayCast2D" parent="Sprite" index="0"]
 position = Vector2( 0, -4.76837e-07 )
 enabled = true
 cast_to = Vector2( -8, 0 )
-
-[node name="DeathSprite" parent="." index="2"]
-visible = true
+collision_mask = 65
 
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = "Idle"
@@ -207,8 +202,12 @@ anims/Walk = SubResource( 6 )
 [node name="AnimationTree" parent="." index="4"]
 anim_player = NodePath("")
 
+[node name="EnemyHead" parent="." index="5" groups=[
+"EnemyHead",
+]]
+
 [node name="CollisionShape2D" parent="EnemyHead" index="0"]
-position = Vector2( 0, -12 )
+position = Vector2( 0, -6 )
 shape = SubResource( 7 )
 one_way_collision = false
 

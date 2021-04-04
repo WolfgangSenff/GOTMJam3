@@ -57,6 +57,8 @@ func _on_EnemyHead_anim_area_entered(area: Area2D) -> void:
 
 func _check_death() -> void:
     if HP <= 0 and ShouldMove:
+        is_alive = false
+        Globals.enemy_killed(self)
         ShouldMove = false
         _is_flipped = true
         flip_enemy()

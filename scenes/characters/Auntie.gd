@@ -1,8 +1,12 @@
 extends CharacterBase
 
+signal game_over
+signal took_damage
+
 onready var _is_walking : bool = false setget set_is_walking, get_is_walking
 onready var _is_idle : bool = true setget set_is_idle, get_is_idle
 onready var _is_in_air : bool = true setget set_is_in_air, get_is_in_air
+onready var _invincibility_timer = $InvincibilityTimer
 
 export (float) var JumpStrength = 400
 export (float) var JumpMultiplier = 1.4
@@ -10,13 +14,18 @@ export (float) var MovementSpeed = 20
 export (float) var Gravity = 1000
 export (float) var Friction = 420
 export (float) var MaxSpeed = 150
+export var HitStrength := 1000
 
+var _can_take_damage := true
 var _jump_count = 0
 var _snap_vector = 1 setget , get_snap_vector
 var _velocity = Vector2.ZERO
 var _is_in_enemy_head := false setget set_is_in_enemy_head
 var _current_enemy_jump = null
 var _can_jump
+var is_alive = true
+
+onready var _feet = $Feet
 
 func _ready() -> void:
     set_random_idle_blend()
@@ -91,9 +100,18 @@ func _physics_process(delta: float) -> void:
         self._is_idle = true   
         
     _velocity.x = clamp(_velocity.x, -MaxSpeed, MaxSpeed) 
+    var overlapping_feet = _feet.get_overlapping_areas()
+    var has_overlap_with_head = false
+    for area in overlapping_feet:
+        if area.collision_layer == 8:
+            has_overlap_with_head = true
+            break
+    if not on_floor or has_overlap_with_head:
+        _velocity.y += Gravity * delta
+    else:
+        _velocity.y = 0
         
-    _velocity.y += Gravity * delta
-    _velocity = move_and_slide(_velocity, Vector2.UP, true)
+    _velocity = move_and_slide_with_snap(_velocity, Vector2.DOWN * 8 if (on_floor and not has_overlap_with_head) else Vector2.DOWN * 0, Vector2.UP, true)
     
     for i in get_slide_count():
         var collision := get_slide_collision(i)
@@ -114,3 +132,20 @@ func _on_Feet_area_entered(area: Area2D) -> void:
 func _on_Feet_area_exited(area: Area2D) -> void:
     if area == _current_enemy_jump:
         _is_in_enemy_head = false
+
+func _on_Hit_body_entered(body: Node) -> void:
+    if body.is_alive and is_alive and _can_take_damage:
+        Globals.player_take_damage(body.damage)
+        emit_signal("took_damage")
+        _can_take_damage = false
+        if Globals.current_player_hp > 0:
+            var direction_of_hit = (body.global_position - global_position).normalized()
+            _velocity.x -= direction_of_hit.x * HitStrength
+            _playback.travel("Damage")
+            _invincibility_timer.start()
+        else:
+            is_alive = false
+            emit_signal("game_over")
+
+func _on_InvincibilityTimer_timeout() -> void:
+    _can_take_damage = true

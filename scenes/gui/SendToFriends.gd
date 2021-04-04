@@ -1,20 +1,24 @@
 extends Control
 const ColorWords = [
     "Purple", "Red", "Brown", "Blue", "Black", "Green", "Yellow",
-    "Teal", "Puce", "Gray", "Lilac"
+    "Teal", "Puce", "Gray", "Lilac", "Orange", "Hungry", "Thirsty",
+    "Cream"
    ]
 
 const VerbWords = [
     "Smell", "Taste", "See", "Vote", "Eat", "Hear", "Drink",
     "Lift", "Throw", "Kick", "Crawl", "Paint", "Shave", "Pet",
-    "Nust", "Drive", "Trust", "Call", "Run"
+    "Nust", "Drive", "Trust", "Call", "Run", "Melt", "Cheat",
+    "Punch", "Open", "Close", "Turn", "Shake"
    ]
 
 const NounWords = [
     "Bread", "Toast", "Cat", "Dog", "Table", "Chips", "Ground",
     "Leaf", "Elephant", "Giraffe", "Lambo", "Fish", "Carrot",
     "Lettuce", "Cereal", "Celery", "Fire", "Car", "Truck",
-    "Corn", "Chimken", "Turnkey", "Beef", "Peanut", "Kale", "Dino"
+    "Corn", "Chicken", "Turkey", "Beef", "Peanut", "Kale", "Dino",
+    "Pizza", "Bear", "Coat", "Godot", "Person", "Animal", "Place",
+    "Thing", "Vehicle", "Cow", "Drink"
    ]
 
 onready var link = $MarginContainer/Control/DynamicLink
@@ -28,8 +32,8 @@ func _ready() -> void:
     var noun = get_random_word(NounWords)
     if Globals.user_name:
         user_name.text = Globals.user_name
-    link.text = verb + "-the-" + color + "-" + noun
-    Globals.dynamic_link = verb + "-the-" + color + "-" + noun
+    link.text = verb + "-" + color + "-" + noun
+    Globals.dynamic_link = verb + "-" + color + "-" + noun
     
 static func get_random_word(word_list : Array) -> String:
     return word_list[randi() % word_list.size()]

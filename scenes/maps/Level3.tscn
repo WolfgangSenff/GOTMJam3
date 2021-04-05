@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://resources/levels/level1.tres" type="Resource" id=1]
+[ext_resource path="res://scenes/maps/MapBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/characters/Birb.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/characters/AngryRock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/world/DoorLevelTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/world/SpawnPosition.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/characters/Boot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/world/LightningPickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/world/CloudPickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/world/RainPickup.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 94, 264 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 92, 237 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 92, 312 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 106, 121 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 129, 144 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 87, 86 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 96, 64 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 1636, 143 )
+
+[node name="Level3" instance=ExtResource( 2 )]
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -262152, 0, 0, -262151, 0, 1, -262150, 0, 1, -262149, 0, 1, -262148, 0, 2, -196616, 0, 65536, -196615, 0, 65537, -196614, 0, 65537, -196613, 0, 65537, -196612, 0, 65538, -262126, 0, 0, -262125, 0, 1, -262124, 0, 2, -262097, 0, 0, -262096, 0, 1, -262095, 0, 1, -262094, 0, 2, -262090, 0, 0, -262089, 0, 1, -262088, 0, 1, -262087, 0, 1, -262086, 0, 5, -262085, 0, 196609, -262084, 0, 196610, -131080, 0, 65536, -131079, 0, 65537, -131078, 0, 65537, -131077, 0, 65537, -131076, 0, 65538, -196590, 0, 65536, -196589, 0, 65537, -196588, 0, 65538, -196585, 0, 0, -196584, 0, 2, -196564, 0, 0, -196563, 0, 1, -196562, 0, 1, -196561, 0, 131078, -196560, 0, 65537, -196559, 0, 65537, -196558, 0, 65538, -196554, 0, 65536, -196553, 0, 65537, -196552, 0, 65537, -196551, 0, 65537, -196550, 0, 65538, -65544, 0, 65536, -65543, 0, 65537, -65542, 0, 65537, -65541, 0, 65537, -65540, 0, 65538, -131059, 0, 0, -131058, 0, 1, -131057, 0, 2, -131054, 0, 65536, -131053, 0, 65537, -131052, 0, 65538, -131049, 0, 65536, -131048, 0, 65538, -131045, 0, 0, -131044, 0, 2, -131028, 0, 65536, -131027, 0, 65537, -131026, 0, 65537, -131025, 0, 65537, -131024, 0, 65537, -131023, 0, 65537, -131022, 0, 65538, -131018, 0, 65536, -131017, 0, 65537, -131016, 0, 65537, -131015, 0, 65537, -131014, 0, 65538, -131010, 0, 196608, -131009, 0, 196609, -131008, 0, 196610, -8, 0, 65536, -7, 0, 65537, -6, 0, 65537, -5, 0, 65537, -4, 0, 65538, -65523, 0, 65536, -65522, 0, 65537, -65521, 0, 65538, -65518, 0, 65536, -65517, 0, 65537, -65516, 0, 65538, -65513, 0, 131072, -65512, 0, 131074, -65509, 0, 65536, -65508, 0, 65538, -65495, 0, 0, -65494, 0, 1, -65493, 0, 1, -65492, 0, 131078, -65491, 0, 65537, -65490, 0, 65541, -65489, 0, 131073, -65488, 0, 131073, -65487, 0, 131073, -65486, 0, 131074, -65482, 0, 65536, -65481, 0, 65537, -65480, 0, 65537, -65479, 0, 65537, -65478, 0, 65538, 65528, 0, 65536, 65529, 0, 65537, 65530, 0, 65537, 65531, 0, 65537, 65532, 0, 131077, 65533, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 2, 13, 0, 65536, 14, 0, 65537, 15, 0, 65538, 18, 0, 65536, 19, 0, 65537, 20, 0, 65538, 27, 0, 131072, 28, 0, 131074, 31, 0, 0, 32, 0, 2, 41, 0, 65536, 42, 0, 65537, 43, 0, 65537, 44, 0, 65537, 45, 0, 65537, 46, 0, 65538, 54, 0, 65536, 55, 0, 65537, 56, 0, 65537, 57, 0, 65537, 58, 0, 131077, 59, 0, 1, 60, 0, 2, 131064, 0, 65536, 131065, 0, 65537, 131066, 0, 65537, 131067, 0, 65537, 131068, 0, 65537, 131069, 0, 65537, 131070, 0, 65537, 131071, 0, 65537, 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65538, 65549, 0, 65536, 65550, 0, 65537, 65551, 0, 65538, 65554, 0, 65536, 65555, 0, 65537, 65556, 0, 65538, 65567, 0, 65536, 65568, 0, 65538, 65571, 0, 0, 65572, 0, 1, 65573, 0, 1, 65574, 0, 1, 65575, 0, 1, 65576, 0, 1, 65577, 0, 131078, 65578, 0, 65537, 65579, 0, 65537, 65580, 0, 65537, 65581, 0, 65537, 65582, 0, 65538, 65587, 0, 0, 65588, 0, 1, 65589, 0, 1, 65590, 0, 131078, 65591, 0, 65537, 65592, 0, 65537, 65593, 0, 65537, 65594, 0, 65541, 65595, 0, 131073, 65596, 0, 131074, 196600, 0, 65536, 196601, 0, 65537, 196602, 0, 65537, 196603, 0, 65537, 196604, 0, 65537, 196605, 0, 65537, 196606, 0, 65537, 196607, 0, 65537, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 65537, 131082, 0, 65538, 131085, 0, 65536, 131086, 0, 65537, 131087, 0, 65538, 131090, 0, 65536, 131091, 0, 65537, 131092, 0, 65538, 131103, 0, 131072, 131104, 0, 131074, 131107, 0, 131072, 131108, 0, 131073, 131109, 0, 131073, 131110, 0, 131073, 131111, 0, 131073, 131112, 0, 131073, 131113, 0, 131073, 131114, 0, 131073, 131115, 0, 131073, 131116, 0, 131073, 131117, 0, 131073, 131118, 0, 131074, 131123, 0, 131072, 131124, 0, 131073, 131125, 0, 131073, 131126, 0, 131073, 131127, 0, 131073, 131128, 0, 131073, 131129, 0, 131073, 131130, 0, 131074, 131135, 0, 0, 131136, 0, 2, 262136, 0, 65536, 262137, 0, 65537, 262138, 0, 65537, 262139, 0, 65537, 262140, 0, 65537, 262141, 0, 65537, 262142, 0, 65537, 262143, 0, 65537, 196608, 0, 65537, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 65538, 196621, 0, 65536, 196622, 0, 65537, 196623, 0, 65538, 196626, 0, 65536, 196627, 0, 65537, 196628, 0, 65538, 196671, 0, 65536, 196672, 0, 65538, 327672, 0, 131072, 327673, 0, 131073, 327674, 0, 131073, 327675, 0, 131073, 327676, 0, 131073, 327677, 0, 131073, 327678, 0, 131073, 327679, 0, 131073, 262144, 0, 131073, 262145, 0, 131073, 262146, 0, 131073, 262147, 0, 131073, 262148, 0, 131073, 262149, 0, 131073, 262150, 0, 131073, 262151, 0, 131073, 262152, 0, 131073, 262153, 0, 131073, 262154, 0, 131074, 262157, 0, 131072, 262158, 0, 131073, 262159, 0, 131074, 262162, 0, 131072, 262163, 0, 131073, 262164, 0, 131074, 262204, 0, 0, 262205, 0, 1, 262206, 0, 1, 262207, 0, 131078, 262208, 0, 65538, 327737, 0, 0, 327738, 0, 1, 327739, 0, 1, 327740, 0, 131078, 327741, 0, 65537, 327742, 0, 65537, 327743, 0, 65537, 327744, 0, 65538, 393271, 0, 0, 393272, 0, 1, 393273, 0, 131078, 393274, 0, 65537, 393275, 0, 65537, 393276, 0, 65537, 393277, 0, 65537, 393278, 0, 65537, 393279, 0, 65537, 393280, 0, 65538, 458766, 1, 0, 458767, 1, 1, 458768, 1, 1, 458769, 1, 1, 458770, 1, 1, 458771, 1, 1, 458772, 1, 1, 458773, 1, 1, 458774, 1, 1, 458775, 1, 1, 458776, 1, 1, 458777, 1, 1, 458778, 1, 1, 458779, 1, 1, 458780, 1, 1, 458781, 1, 1, 458782, 1, 1, 458783, 1, 1, 458784, 1, 1, 458785, 1, 1, 458786, 1, 1, 458787, 1, 1, 458788, 1, 1, 458789, 1, 1, 458790, 1, 1, 458791, 1, 1, 458792, 1, 1, 458793, 1, 2, 458797, 0, 0, 458798, 0, 1, 458799, 0, 1, 458800, 0, 1, 458801, 0, 1, 458802, 0, 1, 458803, 0, 1, 458804, 0, 1, 458805, 0, 1, 458806, 0, 1, 458807, 0, 131078, 458808, 0, 65537, 458809, 0, 65537, 458810, 0, 65537, 458811, 0, 65537, 458812, 0, 65537, 458813, 0, 65537, 458814, 0, 65537, 458815, 0, 65537, 458816, 0, 65538, 524302, 1, 65536, 524303, 1, 65537, 524304, 1, 65537, 524305, 1, 65537, 524306, 1, 65537, 524307, 1, 65537, 524308, 1, 65537, 524309, 1, 65537, 524310, 1, 65537, 524311, 1, 65537, 524312, 1, 65537, 524313, 1, 65537, 524314, 1, 65537, 524315, 1, 65537, 524316, 1, 65537, 524317, 1, 65537, 524318, 1, 65537, 524319, 1, 65537, 524320, 1, 65537, 524321, 1, 65537, 524322, 1, 65537, 524323, 1, 65537, 524324, 1, 65537, 524325, 1, 65537, 524326, 1, 65537, 524327, 1, 65537, 524328, 1, 65537, 524329, 1, 65538, 524333, 0, 131072, 524334, 0, 131073, 524335, 0, 131073, 524336, 0, 131073, 524337, 0, 131073, 524338, 0, 131073, 524339, 0, 131073, 524340, 0, 131073, 524341, 0, 131073, 524342, 0, 131073, 524343, 0, 131073, 524344, 0, 131073, 524345, 0, 131073, 524346, 0, 131073, 524347, 0, 131073, 524348, 0, 131073, 524349, 0, 131073, 524350, 0, 131073, 524351, 0, 131073, 524352, 0, 131074, 589838, 1, 131072, 589839, 1, 131073, 589840, 1, 131073, 589841, 1, 131073, 589842, 1, 131073, 589843, 1, 131073, 589844, 1, 131073, 589845, 1, 131073, 589846, 1, 131073, 589847, 1, 131073, 589848, 1, 131073, 589849, 1, 131073, 589850, 1, 131073, 589851, 1, 131073, 589852, 1, 131073, 589853, 1, 131073, 589854, 1, 131073, 589855, 1, 131073, 589856, 1, 131073, 589857, 1, 131073, 589858, 1, 131073, 589859, 1, 131073, 589860, 1, 131073, 589861, 1, 131073, 589862, 1, 131073, 589863, 1, 131073, 589864, 1, 131073, 589865, 1, 131074 )
+
+[node name="Auntie" parent="." index="2"]
+position = Vector2( -61, 2 )
+
+[node name="DoorLevelTrigger" parent="Exits" index="0" instance=ExtResource( 5 )]
+position = Vector2( 1864, -122 )
+collision_mask = 2
+NextLevelResource = ExtResource( 1 )
+
+[node name="SpawnPosition" parent="EnemiesSpawners" index="0" instance=ExtResource( 6 )]
+position = Vector2( 311.008, 0.9365 )
+SceneToSpawn = ExtResource( 4 )
+IsGround = true
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition" index="0"]
+shape = SubResource( 1 )
+
+[node name="SpawnPosition2" parent="EnemiesSpawners" index="1" instance=ExtResource( 6 )]
+position = Vector2( 314.008, -62.0635 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition2" index="0"]
+shape = SubResource( 2 )
+
+[node name="SpawnPosition3" parent="EnemiesSpawners" index="2" instance=ExtResource( 6 )]
+position = Vector2( 553.008, -18.0635 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition3" index="0"]
+shape = SubResource( 3 )
+
+[node name="SpawnPosition4" parent="EnemiesSpawners" index="3" instance=ExtResource( 6 )]
+position = Vector2( 626.008, -175.064 )
+collision_mask = 64
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition4" index="0"]
+shape = SubResource( 4 )
+
+[node name="SpawnPosition5" parent="EnemiesSpawners" index="4" instance=ExtResource( 6 )]
+position = Vector2( 764.008, -52.0635 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition5" index="0"]
+shape = SubResource( 5 )
+
+[node name="SpawnPosition6" parent="EnemiesSpawners" index="5" instance=ExtResource( 6 )]
+position = Vector2( 1012, -39.0635 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition6" index="0"]
+shape = SubResource( 6 )
+
+[node name="SpawnPosition7" parent="EnemiesSpawners" index="6" instance=ExtResource( 6 )]
+position = Vector2( 1222, -17.0635 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="EnemiesSpawners/SpawnPosition7" index="0"]
+shape = SubResource( 7 )
+
+[node name="SpawnPosition8" parent="EnemiesSpawners" index="7" instance=ExtResource( 6 )]
+position = Vector2( 2383.5, -9.03175 )
+SceneToSpawn = ExtResource( 3 )
+
+[node name="Boot" parent="Enemies" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1760, -119 )
+
+[node name="FallDeath" parent="." index="6"]
+position = Vector2( 962, 413 )
+
+[node name="CollisionShape2D" parent="FallDeath" index="0"]
+shape = SubResource( 8 )
+
+[node name="CloudPickup" parent="Pickups" index="0" instance=ExtResource( 9 )]
+position = Vector2( 192, 0 )
+
+[node name="LightningPickup" parent="Pickups" index="1" instance=ExtResource( 8 )]
+position = Vector2( 1904, 1 )
+
+[node name="RainPickup" parent="Pickups" index="2" instance=ExtResource( 10 )]
+position = Vector2( 1469, 225 )
+
+[node name="Root" parent="CanvasLayer" index="0"]
+visible = false
+
+[editable path="EnemiesSpawners/SpawnPosition"]
+[editable path="EnemiesSpawners/SpawnPosition2"]
+[editable path="EnemiesSpawners/SpawnPosition3"]
+[editable path="EnemiesSpawners/SpawnPosition4"]
+[editable path="EnemiesSpawners/SpawnPosition5"]
+[editable path="EnemiesSpawners/SpawnPosition6"]
+[editable path="EnemiesSpawners/SpawnPosition7"]

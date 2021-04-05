@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/world/Leaf.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/world/LeafPlatform.gd" type="Script" id=2]
+
+[node name="LeafPlatform" type="Path2D"]
+curve = null
+script = ExtResource( 2 )
+
+[node name="Leaf" parent="." instance=ExtResource( 1 )]
+collision_layer = 0

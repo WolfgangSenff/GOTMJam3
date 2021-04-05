@@ -44,7 +44,7 @@ anchor_right = 0.5
 margin_left = -172.0
 margin_right = 172.0
 margin_bottom = 37.0
-text = "This is your Fremb Hint. Give this to a Fremb so they can join you for a game. Don't forget to add your name beforing joining! Or enter your Fremb's hint below to join."
+text = "This is your Fremb Hint. Give this to a Fremb so they can join you for a game. Don't forget to add your name before joining! Or enter your Fremb's hint below to join."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

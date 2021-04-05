@@ -9,8 +9,6 @@ export (Resource) var NextLevelResource
 onready var anim = $AnimationPlayer
 
 func _on_NextLevelTrigger_area_entered(area: Area2D) -> void:
-    Globals.level_transfer_resource = Globals.levels.keys()[randi() % Globals.levels.keys().size()]
-    Globals.is_level_transfer = true
     emit_signal("about_to_open")
     anim.play("Open")
     yield(anim, "animation_finished")

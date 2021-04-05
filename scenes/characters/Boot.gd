@@ -7,6 +7,11 @@ onready var sprite = $Sprite
 onready var left_cast = $LeftCast
 onready var right_cast = $RightCast
 onready var wall_cast = $Sprite/WallCast
+onready var anim = $AnimationPlayer
+
+func _ready() -> void:
+    yield(get_tree().create_timer(randf() * 2), "timeout")
+    anim.play("Step")
 
 func _physics_process(delta: float) -> void:
     global_position += delta * WalkSpeed * Vector2.RIGHT * sprite.scale.x

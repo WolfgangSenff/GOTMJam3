@@ -1,0 +1,171 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/maps/MapBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/world/CloudPickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/world/grass_tuft1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/world/RainPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/world/LightningPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/world/LeafPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/world/LockedExit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/world/ExitKey.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/world/SpawnPosition.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1665, 66 )
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -3, -1, 0, 0, 0, 0, 95, 71 )
+}
+
+[node name="Level11" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="." index="0"]
+position = Vector2( 1, 0 )
+tile_data = PoolIntArray( -720873, 3, 0, -720872, 3, 1, -720871, 3, 1, -720870, 3, 2, -655337, 3, 65536, -655336, 3, 65537, -655335, 3, 65537, -655334, 3, 65538, -589801, 3, 65536, -589800, 3, 65537, -589799, 3, 65537, -589798, 3, 65538, -524265, 3, 65536, -524264, 3, 65537, -524263, 3, 65537, -524262, 3, 65538, -524257, 3, 0, -524256, 3, 1, -524255, 3, 1, -524254, 3, 2, -458729, 3, 131072, -458728, 3, 131073, -458727, 3, 131073, -458726, 3, 131074, -458721, 3, 65536, -458720, 3, 65537, -458719, 3, 65537, -458718, 3, 131077, -458717, 3, 2, -393185, 3, 131072, -393184, 3, 131073, -393183, 3, 131073, -393182, 3, 131073, -393181, 3, 196613, -393180, 3, 196610, -262106, 3, 0, -262105, 3, 1, -262104, 3, 2, -196570, 3, 131072, -196569, 3, 131073, -196568, 3, 131074, -131030, 3, 0, -131029, 3, 1, -131028, 3, 1, -131027, 3, 2, -65494, 3, 131072, -65493, 3, 131073, -65492, 3, 131073, -65491, 3, 131074, 65525, 0, 0, 65526, 0, 1, 65527, 0, 1, 65528, 0, 2, 65529, 2, 0, 65530, 2, 1, 65531, 2, 1, 65532, 2, 1, 65533, 2, 1, 65534, 2, 1, 65535, 2, 1, 0, 2, 1, 1, 2, 1, 2, 2, 1, 3, 2, 1, 4, 2, 1, 5, 2, 1, 6, 2, 1, 7, 2, 1, 8, 2, 1, 9, 2, 1, 10, 2, 2, 11, 3, 0, 12, 3, 1, 13, 3, 1, 14, 3, 1, 15, 3, 1, 16, 3, 1, 17, 3, 2, 131061, 0, 65536, 131062, 0, 65537, 131063, 0, 65537, 131064, 0, 65538, 131065, 2, 65536, 131066, 2, 65537, 131067, 2, 65537, 131068, 2, 65537, 131069, 2, 65537, 131070, 2, 65537, 131071, 2, 65537, 65536, 2, 65537, 65537, 2, 65537, 65538, 2, 65537, 65539, 2, 65537, 65540, 2, 65537, 65541, 2, 65537, 65542, 2, 65537, 65543, 2, 65537, 65544, 2, 65537, 65545, 2, 65537, 65546, 2, 65538, 65547, 3, 65536, 65548, 3, 65537, 65549, 3, 65537, 65550, 3, 65537, 65551, 3, 65537, 65552, 3, 65537, 65553, 3, 65538, 65564, 3, 0, 65565, 3, 1, 65566, 3, 1, 65567, 3, 1, 65568, 3, 1, 65569, 3, 1, 65570, 3, 1, 65571, 3, 2, 65584, 3, 0, 65585, 3, 1, 65586, 3, 1, 65587, 3, 2, 196597, 0, 131072, 196598, 0, 131073, 196599, 0, 131073, 196600, 0, 131074, 196601, 2, 131072, 196602, 2, 131073, 196603, 2, 131073, 196604, 2, 131073, 196605, 2, 131073, 196606, 2, 131073, 196607, 2, 131073, 131072, 2, 131073, 131073, 2, 131073, 131074, 2, 131073, 131075, 2, 131073, 131076, 2, 131073, 131077, 2, 131073, 131078, 2, 131073, 131079, 2, 131073, 131080, 2, 131073, 131081, 2, 131073, 131082, 2, 131074, 131083, 3, 131072, 131084, 3, 131073, 131085, 3, 131073, 131086, 3, 131073, 131087, 3, 131073, 131088, 3, 131073, 131089, 3, 131074, 131092, 3, 0, 131093, 3, 1, 131094, 3, 1, 131095, 3, 1, 131096, 3, 1, 131097, 3, 2, 131100, 3, 65536, 131101, 3, 65537, 131102, 3, 65537, 131103, 3, 65537, 131104, 3, 65537, 131105, 3, 65537, 131106, 3, 65537, 131107, 3, 65538, 131120, 3, 65536, 131121, 3, 65537, 131122, 3, 65537, 131123, 3, 65538, 196628, 3, 131072, 196629, 3, 131073, 196630, 3, 131073, 196631, 3, 131073, 196632, 3, 131073, 196633, 3, 131074, 196636, 3, 131072, 196637, 3, 131073, 196638, 3, 131073, 196639, 3, 131073, 196640, 3, 131073, 196641, 3, 131073, 196642, 3, 131073, 196643, 3, 131074, 196647, 3, 0, 196648, 3, 1, 196649, 3, 1, 196650, 3, 1, 196651, 3, 1, 196652, 3, 1, 196653, 3, 1, 196654, 3, 1, 196655, 3, 1, 196656, 3, 131078, 196657, 3, 65537, 196658, 3, 65537, 196659, 3, 65538, 262183, 3, 65536, 262184, 3, 65537, 262185, 3, 65537, 262186, 3, 65537, 262187, 3, 65537, 262188, 3, 65537, 262189, 3, 65537, 262190, 3, 65537, 262191, 3, 65537, 262192, 3, 65537, 262193, 3, 65537, 262194, 3, 65537, 262195, 3, 65538, 327719, 3, 131072, 327720, 3, 131073, 327721, 3, 131073, 327722, 3, 131073, 327723, 3, 131073, 327724, 3, 131073, 327725, 3, 131073, 327726, 3, 131073, 327727, 3, 131073, 327728, 3, 131073, 327729, 3, 131073, 327730, 3, 131073, 327731, 3, 131074 )
+
+[node name="SpawnPosition" parent="EnemiesSpawners" index="0" instance=ExtResource( 9 )]
+position = Vector2( 387.504, 0.96825 )
+IsGround = true
+
+[node name="SpawnPosition2" parent="EnemiesSpawners" index="1" instance=ExtResource( 9 )]
+position = Vector2( 489.504, 0.96825 )
+IsGround = true
+
+[node name="SpawnPosition3" parent="EnemiesSpawners" index="2" instance=ExtResource( 9 )]
+position = Vector2( 561.504, 1.96825 )
+IsGround = true
+
+[node name="SpawnPosition4" parent="EnemiesSpawners" index="3" instance=ExtResource( 9 )]
+position = Vector2( 656.504, 66.9682 )
+IsGround = true
+
+[node name="SpawnPosition5" parent="EnemiesSpawners" index="4" instance=ExtResource( 9 )]
+position = Vector2( 758.504, 65.9682 )
+IsGround = true
+
+[node name="SpawnPosition6" parent="EnemiesSpawners" index="5" instance=ExtResource( 9 )]
+position = Vector2( 935.504, 31.9682 )
+IsGround = true
+
+[node name="SpawnPosition7" parent="EnemiesSpawners" index="6" instance=ExtResource( 9 )]
+position = Vector2( 1018.5, 31.9683 )
+IsGround = true
+
+[node name="SpawnPosition8" parent="EnemiesSpawners" index="7" instance=ExtResource( 9 )]
+position = Vector2( 1131.5, 31.9683 )
+IsGround = true
+
+[node name="SpawnPosition9" parent="EnemiesSpawners" index="8" instance=ExtResource( 9 )]
+position = Vector2( 1259.5, 95.9682 )
+IsGround = true
+
+[node name="SpawnPosition10" parent="EnemiesSpawners" index="9" instance=ExtResource( 9 )]
+position = Vector2( 1375.5, 96.9682 )
+IsGround = true
+
+[node name="SpawnPosition11" parent="EnemiesSpawners" index="10" instance=ExtResource( 9 )]
+position = Vector2( 1499.5, 96.9682 )
+IsGround = true
+
+[node name="SpawnPosition12" parent="EnemiesSpawners" index="11" instance=ExtResource( 9 )]
+position = Vector2( 1652.5, 32.9682 )
+IsGround = true
+
+[node name="SpawnPosition13" parent="EnemiesSpawners" index="12" instance=ExtResource( 9 )]
+position = Vector2( 1456.5, -63.0317 )
+IsGround = true
+
+[node name="SpawnPosition14" parent="EnemiesSpawners" index="13" instance=ExtResource( 9 )]
+position = Vector2( 1352.5, -65.0318 )
+IsGround = true
+
+[node name="SpawnPosition15" parent="EnemiesSpawners" index="14" instance=ExtResource( 9 )]
+position = Vector2( 1260.5, -128.032 )
+IsGround = true
+
+[node name="SpawnPosition16" parent="EnemiesSpawners" index="15" instance=ExtResource( 9 )]
+position = Vector2( 1051.5, -255.032 )
+IsGround = true
+
+[node name="SpawnPosition17" parent="EnemiesSpawners" index="16" instance=ExtResource( 9 )]
+position = Vector2( 842.504, -351.032 )
+IsGround = true
+
+[node name="SpawnPosition18" parent="EnemiesSpawners" index="17" instance=ExtResource( 9 )]
+position = Vector2( 153.504, -0.0317497 )
+IsGround = true
+
+[node name="SpawnPosition19" parent="EnemiesSpawners" index="18" instance=ExtResource( 9 )]
+position = Vector2( 1842.5, -283.032 )
+
+[node name="FallDeath" parent="." index="6"]
+position = Vector2( 748, 299 )
+
+[node name="CollisionShape2D" parent="FallDeath" index="0"]
+shape = SubResource( 2 )
+
+[node name="LightningPickup" parent="Pickups" index="0" instance=ExtResource( 5 )]
+position = Vector2( -320, -1 )
+
+[node name="RainPickup" parent="Pickups" index="1" instance=ExtResource( 4 )]
+position = Vector2( -304, 0 )
+
+[node name="CloudPickup" parent="Pickups" index="2" instance=ExtResource( 2 )]
+position = Vector2( -286, 1 )
+
+[node name="LeafPlatform" parent="." index="10" instance=ExtResource( 6 )]
+position = Vector2( 881, -330 )
+curve = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="11"]
+position = Vector2( -322, -43 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="." index="12"]
+position = Vector2( -310, -42 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="." index="13"]
+position = Vector2( -299, -42 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="." index="14"]
+position = Vector2( -312, -42 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="." index="15"]
+position = Vector2( -289, -41 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="." index="16"]
+position = Vector2( -279, -41 )
+texture = ExtResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="." index="17"]
+position = Vector2( -267, -41 )
+texture = ExtResource( 3 )
+
+[node name="Sprite8" type="Sprite" parent="." index="18"]
+position = Vector2( -252, -40 )
+texture = ExtResource( 3 )
+
+[node name="Sprite9" type="Sprite" parent="." index="19"]
+position = Vector2( -237, -40 )
+texture = ExtResource( 3 )
+
+[node name="Sprite10" type="Sprite" parent="." index="20"]
+position = Vector2( -257, -42 )
+texture = ExtResource( 3 )
+
+[node name="Sprite11" type="Sprite" parent="." index="21"]
+position = Vector2( -272, -39 )
+texture = ExtResource( 3 )
+
+[node name="LockedExit" parent="." index="22" instance=ExtResource( 7 )]
+position = Vector2( 748, -366 )
+z_index = 1
+
+[node name="ExitKey" parent="." index="23" instance=ExtResource( 8 )]
+position = Vector2( -205, -3 )
+AssociatedExitPath = NodePath("../LockedExit")

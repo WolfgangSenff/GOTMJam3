@@ -7,6 +7,10 @@ var MoveSpeed
 var _velocity = Vector2.ZERO
 
 func set_points(value) -> void:
+    var index = 0
+    for val in value:
+        value[index] += get_parent().global_position
+        index += 1
     points = value
     _target = points[0]
     

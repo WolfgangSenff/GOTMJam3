@@ -2,7 +2,7 @@ extends Node2D
 
 onready var _anim = $AnimationPlayer
 
-var damage = 3
+var damage = 5
 var is_alive = true
 
 func strike() -> void:

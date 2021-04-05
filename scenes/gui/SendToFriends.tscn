@@ -57,19 +57,22 @@ margin_right = 264.0
 margin_bottom = 93.0
 editable = false
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/Control"]
-margin_left = 66.0
-margin_top = 132.0
-margin_right = 264.0
-margin_bottom = 156.0
-placeholder_text = "Fremb Hint"
-
 [node name="LineEdit2" type="LineEdit" parent="MarginContainer/Control"]
 margin_left = 66.0
 margin_top = 98.0
 margin_right = 264.0
 margin_bottom = 125.0
 placeholder_text = "Your Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Control"]
+margin_left = 66.0
+margin_top = 132.0
+margin_right = 264.0
+margin_bottom = 156.0
+placeholder_text = "Fremb Hint"
 
 [node name="Button" type="Button" parent="MarginContainer/Control"]
 margin_left = 119.0

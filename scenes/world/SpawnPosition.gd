@@ -2,7 +2,6 @@ extends Area2D
 
 export (PackedScene) onready var SceneToSpawn setget set_scene_to_spawn, get_scene_to_spawn
 export (bool) var IsGround
-export (float) var TimeToSpawn = 0.5
 var is_current = false
 
 var _spawns = []

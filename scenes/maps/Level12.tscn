@@ -1,0 +1,389 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scenes/world/SpawnPosition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/characters/SheepingRock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/characters/AngryRock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/world/LeafPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/characters/Birb2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/world/LockedExit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/world/ExitKey.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/characters/Birb.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/maps/MapBase.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/world/CloudPickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/world/LightningPickup.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 2093, 139 )
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 11, -1, 0, 0, 0, 0, 190, -89 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 19, 1, 0, 0, 0, 0, 275, -108 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 185, -84 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -58, 24, 0, 0, 0, 0, 127, 7 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -102, 35, 0, 0, 0, 0, 148, -23, 0, 0, 0, 0, 266, 43 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -74, -104, 0, 0, 0, 0, 70, 117 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -2, 38, 0, 0, 0, 0, 39, 16, 0, 0, 0, 0, 84, -15, 0, 0, 0, 0, 123, -70, 0, 0, 0, 0, 140, -125, 0, 0, 0, 0, 155, -217, 0, 0, 0, 0, 164, -287, 0, 0, 0, 0, 159, -323, 0, 0, 0, 0, 125, -374, 0, 0, 0, 0, 104, -407, 0, 0, 0, 0, 38, -443, 0, 0, 0, 0, 12, -482, 0, 0, 0, 0, 11, -528, 0, 0, 0, 0, 3, -571, 0, 0, 0, 0, -12, -599, 0, 0, 0, 0, -46, -630 )
+}
+
+[node name="Level12" instance=ExtResource( 9 )]
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( 458790, 1, 0, 458791, 1, 1, 458792, 1, 1, 458793, 1, 2, 458810, 1, 0, 458811, 1, 1, 458812, 1, 1, 458813, 1, 2, 524326, 1, 65536, 524327, 1, 65537, 524328, 1, 65537, 524329, 1, 65538, 524346, 1, 65536, 524347, 1, 65537, 524348, 1, 65537, 524349, 1, 65538, 589862, 1, 65536, 589863, 1, 65537, 589864, 1, 65537, 589865, 1, 65538, 589882, 1, 131072, 589883, 1, 131073, 589884, 1, 131073, 589885, 1, 131074, 655387, 1, 0, 655388, 1, 1, 655389, 1, 2, 655398, 1, 131072, 655399, 1, 131073, 655400, 1, 131073, 655401, 1, 131074, 720923, 1, 65536, 720924, 1, 65537, 720925, 1, 65538, 851959, 1, 0, 851960, 1, 1, 851961, 1, 1, 851962, 1, 1, 851963, 1, 1, 851964, 1, 1, 851965, 1, 1, 851966, 1, 1, 851967, 1, 1, 786432, 1, 1, 786433, 1, 1, 786434, 1, 1, 786435, 1, 1, 786436, 1, 1, 786437, 1, 1, 786438, 1, 1, 786439, 1, 1, 786440, 1, 1, 786441, 1, 1, 786442, 1, 1, 786443, 1, 1, 786444, 1, 1, 786445, 1, 2, 786459, 1, 65536, 786460, 1, 65537, 786461, 1, 65538, 917495, 1, 65536, 917496, 1, 65537, 917497, 1, 65537, 917498, 1, 65537, 917499, 1, 65537, 917500, 1, 65537, 917501, 1, 65537, 917502, 1, 65537, 917503, 1, 65537, 851968, 1, 65537, 851969, 1, 65537, 851970, 1, 65537, 851971, 1, 65537, 851972, 1, 65537, 851973, 1, 65537, 851974, 1, 65537, 851975, 1, 65537, 851976, 1, 65537, 851977, 1, 65537, 851978, 1, 65537, 851979, 1, 65537, 851980, 1, 65537, 851981, 1, 65538, 851984, 1, 0, 851985, 1, 1, 851986, 1, 1, 851987, 1, 1, 851988, 1, 1, 851989, 1, 1, 851990, 1, 1, 851991, 1, 2, 851995, 1, 65536, 851996, 1, 65537, 851997, 1, 65538, 852033, 1, 0, 852034, 1, 1, 852035, 1, 1, 852036, 1, 1, 852037, 1, 2, 983031, 1, 65536, 983032, 1, 65537, 983033, 1, 65537, 983034, 1, 65537, 983035, 1, 65537, 983036, 1, 65537, 983037, 1, 65537, 983038, 1, 65537, 983039, 1, 65537, 917504, 1, 65537, 917505, 1, 65537, 917506, 1, 65537, 917507, 1, 65537, 917508, 1, 65537, 917509, 1, 65537, 917510, 1, 65537, 917511, 1, 65537, 917512, 1, 65537, 917513, 1, 65537, 917514, 1, 65537, 917515, 1, 65537, 917516, 1, 65537, 917517, 1, 65538, 917520, 1, 65536, 917521, 1, 65537, 917522, 1, 65537, 917523, 1, 65537, 917524, 1, 65537, 917525, 1, 65537, 917526, 1, 65537, 917527, 1, 65538, 917531, 1, 65536, 917532, 1, 65537, 917533, 1, 65538, 917569, 1, 65536, 917570, 1, 65537, 917571, 1, 65537, 917572, 1, 65537, 917573, 1, 65538, 1048567, 1, 65536, 1048568, 1, 65537, 1048569, 1, 65537, 1048570, 1, 65537, 1048571, 1, 65537, 1048572, 1, 65537, 1048573, 1, 65537, 1048574, 1, 65537, 1048575, 1, 65537, 983040, 1, 65537, 983041, 1, 65537, 983042, 1, 65537, 983043, 1, 65537, 983044, 1, 65537, 983045, 1, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, 1, 65537, 983049, 1, 65537, 983050, 1, 65537, 983051, 1, 65537, 983052, 1, 65537, 983053, 1, 65538, 983056, 1, 65536, 983057, 1, 65537, 983058, 1, 65537, 983059, 1, 65537, 983060, 1, 65537, 983061, 1, 65537, 983062, 1, 65537, 983063, 1, 65538, 983067, 1, 65536, 983068, 1, 65537, 983069, 1, 65538, 983087, 1, 0, 983088, 1, 1, 983089, 1, 1, 983090, 1, 2, 983105, 1, 131072, 983106, 1, 131073, 983107, 1, 131073, 983108, 1, 131073, 983109, 1, 131074, 1114103, 1, 131072, 1114104, 1, 131073, 1114105, 1, 131073, 1114106, 1, 131073, 1114107, 1, 131073, 1114108, 1, 131073, 1114109, 1, 131073, 1114110, 1, 131073, 1114111, 1, 131073, 1048576, 1, 131073, 1048577, 1, 131073, 1048578, 1, 131073, 1048579, 1, 131073, 1048580, 1, 131073, 1048581, 1, 131073, 1048582, 1, 131073, 1048583, 1, 131073, 1048584, 1, 131073, 1048585, 1, 131073, 1048586, 1, 131073, 1048587, 1, 131073, 1048588, 1, 131073, 1048589, 1, 131074, 1048592, 1, 131072, 1048593, 1, 131073, 1048594, 1, 131073, 1048595, 1, 131073, 1048596, 1, 131073, 1048597, 1, 131073, 1048598, 1, 131073, 1048599, 1, 131074, 1048603, 1, 131072, 1048604, 1, 131073, 1048605, 1, 131074, 1048623, 1, 65536, 1048624, 1, 65537, 1048625, 1, 65537, 1048626, 1, 65538, 1114159, 1, 65536, 1114160, 1, 65537, 1114161, 1, 65537, 1114162, 1, 65538, 1179695, 1, 131072, 1179696, 1, 131073, 1179697, 1, 131073, 1179698, 1, 131074, 1310743, 1, 0, 1310744, 1, 1, 1310745, 1, 1, 1310746, 1, 1, 1310747, 1, 1, 1310748, 1, 1, 1310749, 1, 1, 1310750, 1, 1, 1310751, 1, 1, 1310752, 1, 1, 1310753, 1, 1, 1310754, 1, 1, 1310755, 1, 1, 1310756, 1, 1, 1310757, 1, 2, 1376279, 1, 131072, 1376280, 1, 131073, 1376281, 1, 131073, 1376282, 1, 131073, 1376283, 1, 131073, 1376284, 1, 131073, 1376285, 1, 131073, 1376286, 1, 131073, 1376287, 1, 131073, 1376288, 1, 131073, 1376289, 1, 131073, 1376290, 1, 131073, 1376291, 1, 131073, 1376292, 1, 131073, 1376293, 1, 131074, 1572907, 1, 0, 1572908, 1, 1, 1572909, 1, 1, 1572910, 1, 1, 1572911, 1, 1, 1572912, 1, 1, 1572913, 1, 1, 1572914, 1, 2, 1572925, 1, 0, 1572926, 1, 1, 1572927, 1, 1, 1572928, 1, 1, 1572929, 1, 1, 1572930, 1, 1, 1572931, 1, 2, 1638443, 1, 131072, 1638444, 1, 131073, 1638445, 1, 131073, 1638446, 1, 131073, 1638447, 1, 131073, 1638448, 1, 131073, 1638449, 1, 131073, 1638450, 1, 131074, 1638461, 1, 131072, 1638462, 1, 131073, 1638463, 1, 131073, 1638464, 1, 131073, 1638465, 1, 131073, 1638466, 1, 131073, 1638467, 1, 131074 )
+
+[node name="LockedExit" parent="." index="3" instance=ExtResource( 6 )]
+position = Vector2( 2086, 399 )
+
+[node name="ExitKey" parent="." index="4" instance=ExtResource( 7 )]
+position = Vector2( 1870, 222 )
+AssociatedExitPath = NodePath("../LockedExit")
+
+[node name="SpawnPosition" parent="EnemiesSpawners" index="0" instance=ExtResource( 1 )]
+position = Vector2( 3045.5, 325.968 )
+
+[node name="SpawnPosition2" parent="EnemiesSpawners" index="1" instance=ExtResource( 1 )]
+position = Vector2( -192.496, 377.968 )
+IsGround = true
+
+[node name="SpawnPosition3" parent="EnemiesSpawners" index="2" instance=ExtResource( 1 )]
+position = Vector2( 405.504, 379.968 )
+IsGround = true
+
+[node name="SpawnPosition4" parent="EnemiesSpawners" index="3" instance=ExtResource( 1 )]
+position = Vector2( 739.504, 413.968 )
+IsGround = true
+
+[node name="SpawnPosition5" parent="EnemiesSpawners" index="4" instance=ExtResource( 1 )]
+position = Vector2( 782.504, 639.968 )
+IsGround = true
+
+[node name="SpawnPosition6" parent="EnemiesSpawners" index="5" instance=ExtResource( 1 )]
+position = Vector2( 1545.5, 479.968 )
+IsGround = true
+
+[node name="SpawnPosition7" parent="EnemiesSpawners" index="6" instance=ExtResource( 1 )]
+position = Vector2( 2228.5, 413.968 )
+IsGround = true
+
+[node name="AngryRock" parent="Enemies" index="0" instance=ExtResource( 3 )]
+position = Vector2( 702, 421 )
+WalkingSpeed = 100.0
+
+[node name="AngryRock2" parent="Enemies" index="1" instance=ExtResource( 3 )]
+position = Vector2( 930, 325 )
+
+[node name="AngryRock3" parent="Enemies" index="2" instance=ExtResource( 3 )]
+position = Vector2( 1033, 644 )
+
+[node name="AngryRock4" parent="Enemies" index="3" instance=ExtResource( 3 )]
+position = Vector2( 1328, 226 )
+
+[node name="AngryRock5" parent="Enemies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 1615, 485 )
+
+[node name="AngryRock6" parent="Enemies" index="5" instance=ExtResource( 3 )]
+position = Vector2( 1879, 228 )
+
+[node name="Birb2" parent="Enemies" index="6" instance=ExtResource( 5 )]
+position = Vector2( -323, 260 )
+scale = Vector2( -1, 1 )
+
+[node name="Birb3" parent="Enemies" index="7" instance=ExtResource( 5 )]
+position = Vector2( -604, 174 )
+scale = Vector2( -1, 1 )
+
+[node name="Birb4" parent="Enemies" index="8" instance=ExtResource( 5 )]
+position = Vector2( -832, 652 )
+scale = Vector2( -1, 1 )
+
+[node name="Birb5" parent="Enemies" index="9" instance=ExtResource( 5 )]
+position = Vector2( -1048, 318 )
+scale = Vector2( -1, 1 )
+
+[node name="Birb" parent="Enemies" index="10" instance=ExtResource( 8 )]
+position = Vector2( 2386, 284 )
+
+[node name="Birb6" parent="Enemies" index="11" instance=ExtResource( 8 )]
+position = Vector2( 2423, 403 )
+
+[node name="Birb7" parent="Enemies" index="12" instance=ExtResource( 8 )]
+position = Vector2( 2435, 552 )
+
+[node name="Birb8" parent="Enemies" index="13" instance=ExtResource( 8 )]
+position = Vector2( 2439, 671 )
+
+[node name="Birb9" parent="Enemies" index="14" instance=ExtResource( 8 )]
+position = Vector2( 2694, 771 )
+
+[node name="Birb10" parent="Enemies" index="15" instance=ExtResource( 8 )]
+position = Vector2( 2690, 574 )
+
+[node name="Birb11" parent="Enemies" index="16" instance=ExtResource( 8 )]
+position = Vector2( 2669, 384 )
+
+[node name="Birb12" parent="Enemies" index="17" instance=ExtResource( 8 )]
+position = Vector2( 2599, 247 )
+
+[node name="Birb13" parent="Enemies" index="18" instance=ExtResource( 8 )]
+position = Vector2( 748, 224 )
+
+[node name="Birb14" parent="Enemies" index="19" instance=ExtResource( 8 )]
+position = Vector2( 1923, 638 )
+
+[node name="SheepingRock" parent="Enemies" index="20" instance=ExtResource( 2 )]
+position = Vector2( 1586, 770 )
+
+[node name="SheepingRock2" parent="Enemies" index="21" instance=ExtResource( 2 )]
+position = Vector2( 1557, 771 )
+
+[node name="SheepingRock3" parent="Enemies" index="22" instance=ExtResource( 2 )]
+position = Vector2( 1499, 771 )
+
+[node name="SheepingRock4" parent="Enemies" index="23" instance=ExtResource( 2 )]
+position = Vector2( 1438, 771 )
+WalkingSpeed = 100.0
+
+[node name="SheepingRock5" parent="Enemies" index="24" instance=ExtResource( 2 )]
+position = Vector2( 1982, 772 )
+
+[node name="SheepingRock6" parent="Enemies" index="25" instance=ExtResource( 2 )]
+position = Vector2( 2016, 772 )
+
+[node name="SheepingRock7" parent="Enemies" index="26" instance=ExtResource( 2 )]
+position = Vector2( 2081, 772 )
+WalkingSpeed = 100.0
+
+[node name="FallDeath" parent="." index="8"]
+position = Vector2( 843, 983 )
+
+[node name="CollisionShape2D" parent="FallDeath" index="0"]
+shape = SubResource( 8 )
+
+[node name="CloudPickup" parent="Pickups" index="0" instance=ExtResource( 10 )]
+position = Vector2( 1264, 223 )
+
+[node name="LightningPickup" parent="Pickups" index="1" instance=ExtResource( 11 )]
+position = Vector2( 1562, 477 )
+
+[node name="CountDownLabel" parent="CanvasLayer/Root/MarginContainer/MainContainer" index="0"]
+InitialTime = 999
+
+[node name="Cloud1" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2( -58, 316 )
+
+[node name="Cloud2" parent="ParallaxBackground/ParallaxLayer" index="1"]
+position = Vector2( -163, 245 )
+
+[node name="Cloud3" parent="ParallaxBackground/ParallaxLayer" index="2"]
+position = Vector2( -73, 230 )
+
+[node name="Cloud4" parent="ParallaxBackground/ParallaxLayer" index="3"]
+position = Vector2( 59, 295 )
+
+[node name="Cloud5" parent="ParallaxBackground/ParallaxLayer" index="4"]
+position = Vector2( 233, 251 )
+
+[node name="Cloud6" parent="ParallaxBackground/ParallaxLayer" index="5"]
+position = Vector2( 437, 99 )
+
+[node name="Cloud7" parent="ParallaxBackground/ParallaxLayer" index="6"]
+position = Vector2( 607, 176 )
+
+[node name="Cloud8" parent="ParallaxBackground/ParallaxLayer" index="7"]
+position = Vector2( 778, 169 )
+
+[node name="Cloud9" parent="ParallaxBackground/ParallaxLayer" index="8"]
+position = Vector2( 917, 222 )
+
+[node name="Cloud10" parent="ParallaxBackground/ParallaxLayer" index="9"]
+position = Vector2( 660, 309 )
+
+[node name="Cloud11" parent="ParallaxBackground/ParallaxLayer" index="10"]
+position = Vector2( 448, 289 )
+
+[node name="Cloud12" parent="ParallaxBackground/ParallaxLayer" index="11"]
+position = Vector2( 349, 306 )
+
+[node name="Cloud13" parent="ParallaxBackground/ParallaxLayer" index="12"]
+position = Vector2( 706, 82 )
+
+[node name="Cloud14" parent="ParallaxBackground/ParallaxLayer" index="13"]
+position = Vector2( 1031, 320 )
+
+[node name="Cloud1" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+position = Vector2( 455, 199 )
+
+[node name="Cloud2" parent="ParallaxBackground/ParallaxLayer2" index="1"]
+position = Vector2( 598, 226 )
+
+[node name="Cloud3" parent="ParallaxBackground/ParallaxLayer2" index="2"]
+position = Vector2( 688, 211 )
+
+[node name="Cloud4" parent="ParallaxBackground/ParallaxLayer2" index="3"]
+position = Vector2( 820, 276 )
+
+[node name="Cloud5" parent="ParallaxBackground/ParallaxLayer2" index="4"]
+position = Vector2( 994, 232 )
+
+[node name="Cloud6" parent="ParallaxBackground/ParallaxLayer2" index="5"]
+position = Vector2( 1191, 165 )
+
+[node name="Cloud7" parent="ParallaxBackground/ParallaxLayer2" index="6"]
+position = Vector2( 1361, 242 )
+
+[node name="Cloud8" parent="ParallaxBackground/ParallaxLayer2" index="7"]
+position = Vector2( 2083, 177 )
+
+[node name="Cloud9" parent="ParallaxBackground/ParallaxLayer2" index="8"]
+position = Vector2( 2222, 230 )
+
+[node name="Cloud10" parent="ParallaxBackground/ParallaxLayer2" index="9"]
+position = Vector2( 1965, 317 )
+
+[node name="Cloud11" parent="ParallaxBackground/ParallaxLayer2" index="10"]
+position = Vector2( 1753, 297 )
+
+[node name="Cloud12" parent="ParallaxBackground/ParallaxLayer2" index="11"]
+position = Vector2( 1110, 287 )
+
+[node name="Cloud13" parent="ParallaxBackground/ParallaxLayer2" index="12"]
+position = Vector2( 1460, 148 )
+
+[node name="Cloud14" parent="ParallaxBackground/ParallaxLayer2" index="13"]
+position = Vector2( 1785, 386 )
+
+[node name="Cloud1" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2( 335, 630 )
+
+[node name="Cloud2" parent="ParallaxBackground/ParallaxLayer3" index="1"]
+position = Vector2( 478, 657 )
+
+[node name="Cloud3" parent="ParallaxBackground/ParallaxLayer3" index="2"]
+position = Vector2( 568, 642 )
+
+[node name="Cloud4" parent="ParallaxBackground/ParallaxLayer3" index="3"]
+position = Vector2( 700, 707 )
+
+[node name="Cloud5" parent="ParallaxBackground/ParallaxLayer3" index="4"]
+position = Vector2( 1591, 427 )
+
+[node name="Cloud6" parent="ParallaxBackground/ParallaxLayer3" index="5"]
+position = Vector2( 1688, 471 )
+
+[node name="Cloud7" parent="ParallaxBackground/ParallaxLayer3" index="6"]
+position = Vector2( 1858, 548 )
+
+[node name="Cloud8" parent="ParallaxBackground/ParallaxLayer3" index="7"]
+position = Vector2( 2029, 541 )
+
+[node name="Cloud9" parent="ParallaxBackground/ParallaxLayer3" index="8"]
+position = Vector2( 2168, 594 )
+
+[node name="Cloud10" parent="ParallaxBackground/ParallaxLayer3" index="9"]
+position = Vector2( 1940, 670 )
+
+[node name="Cloud11" parent="ParallaxBackground/ParallaxLayer3" index="10"]
+position = Vector2( 1728, 650 )
+
+[node name="Cloud12" parent="ParallaxBackground/ParallaxLayer3" index="11"]
+position = Vector2( 1636, 582 )
+
+[node name="Cloud13" parent="ParallaxBackground/ParallaxLayer3" index="12"]
+position = Vector2( 1986, 443 )
+
+[node name="Cloud14" parent="ParallaxBackground/ParallaxLayer3" index="13"]
+position = Vector2( 2311, 681 )
+
+[node name="Cloud1" parent="ParallaxBackground/ParallaxLayer4" index="0"]
+position = Vector2( 1104, 485 )
+
+[node name="Cloud2" parent="ParallaxBackground/ParallaxLayer4" index="1"]
+position = Vector2( 1247, 512 )
+
+[node name="Cloud3" parent="ParallaxBackground/ParallaxLayer4" index="2"]
+position = Vector2( 1437, 386 )
+
+[node name="Cloud4" parent="ParallaxBackground/ParallaxLayer4" index="3"]
+position = Vector2( 1569, 451 )
+
+[node name="Cloud5" parent="ParallaxBackground/ParallaxLayer4" index="4"]
+position = Vector2( 945, 511 )
+
+[node name="Cloud6" parent="ParallaxBackground/ParallaxLayer4" index="5"]
+position = Vector2( 1142, 444 )
+
+[node name="Cloud7" parent="ParallaxBackground/ParallaxLayer4" index="6"]
+position = Vector2( 1412, 410 )
+
+[node name="Cloud8" parent="ParallaxBackground/ParallaxLayer4" index="7"]
+position = Vector2( 1236, 576 )
+
+[node name="Cloud9" parent="ParallaxBackground/ParallaxLayer4" index="8"]
+position = Vector2( 1475, 518 )
+
+[node name="Cloud10" parent="ParallaxBackground/ParallaxLayer4" index="9"]
+position = Vector2( 1147, 705 )
+
+[node name="Cloud11" parent="ParallaxBackground/ParallaxLayer4" index="10"]
+position = Vector2( 1309, 813 )
+
+[node name="Cloud12" parent="ParallaxBackground/ParallaxLayer4" index="11"]
+position = Vector2( 1217, 745 )
+
+[node name="Cloud13" parent="ParallaxBackground/ParallaxLayer4" index="12"]
+position = Vector2( 1567, 606 )
+
+[node name="Cloud14" parent="ParallaxBackground/ParallaxLayer4" index="13"]
+position = Vector2( 1892, 844 )
+
+[node name="LeafPlatform" parent="." index="12" instance=ExtResource( 4 )]
+position = Vector2( 986, 338 )
+curve = SubResource( 1 )
+
+[node name="LeafPlatform2" parent="." index="13" instance=ExtResource( 4 )]
+position = Vector2( 1192, 602 )
+curve = SubResource( 2 )
+
+[node name="LeafPlatform3" parent="." index="14" instance=ExtResource( 4 )]
+position = Vector2( 1670, 761 )
+curve = SubResource( 3 )
+
+[node name="LeafPlatform4" parent="." index="15" instance=ExtResource( 4 )]
+position = Vector2( 1864, 655 )
+curve = SubResource( 4 )
+
+[node name="LeafPlatform5" parent="." index="16" instance=ExtResource( 4 )]
+position = Vector2( 1739, 413 )
+curve = SubResource( 5 )
+
+[node name="LeafPlatform6" parent="." index="17" instance=ExtResource( 4 )]
+position = Vector2( 1424, 344 )
+curve = SubResource( 6 )
+
+[node name="LeafPlatform7" parent="." index="18" instance=ExtResource( 4 )]
+position = Vector2( 2160, 689 )
+curve = SubResource( 7 )

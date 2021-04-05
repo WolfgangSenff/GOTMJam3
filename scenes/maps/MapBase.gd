@@ -61,3 +61,11 @@ func _on_FallDeath_area_entered(area: Area2D) -> void:
     aunt.hide()
     aunt.set_physics_process(false)
     aunt.queue_free()
+
+func announce_win() -> void:
+    $CanvasLayer/Root/WinPopup.popup_centered_ratio(.7)
+    get_tree().paused = true
+
+func _on_Button_pressed() -> void:
+    get_tree().paused = false
+    Globals.reset_game(false)

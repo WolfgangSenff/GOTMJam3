@@ -170,7 +170,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 Globals="*res://Globals.gd"
 
 [debug]
@@ -186,10 +185,6 @@ window/size/test_height=606
 window/per_pixel_transparency/allowed=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/godot-firebase/plugin.cfg", "res://addons/http-sse-client/plugin.cfg" )
 
 [firebase]
 

@@ -31,11 +31,6 @@ onready var levels = [
     "Level12"
    ]
 
-func _ready() -> void:
-    if Firebase.Auth != null:
-        Firebase.Auth.connect("signup_succeeded", self, "_on_login_succeeded")
-        Firebase.Auth.login_anonymous()
-
 func spawn_on_main(scene, pos) -> Node:
     var instance = scene.instance()
     get_tree().call_group("Level", "add_child", instance)

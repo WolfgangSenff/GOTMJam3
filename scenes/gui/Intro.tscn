@@ -18,12 +18,4 @@ margin_right = 235.0
 margin_bottom = 65.0
 text = "Single Player"
 
-[node name="Button2" type="Button" parent="."]
-margin_left = 131.0
-margin_top = 88.0
-margin_right = 251.0
-margin_bottom = 108.0
-text = "Play with Friends"
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
